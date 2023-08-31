@@ -130,7 +130,8 @@ body.dark-mode .cart {
     padding: 20px;
     background-color: var(--bg-color);
     box-shadow: -2px solid 4px hsl(0 4% 15% / 10%);
-    border: 1px solid var(--main-color);
+    border: 1px solid #a0c8e0;
+    border-radius: 8px;
     transition: 1.5s;
 }
 .cart.active{
