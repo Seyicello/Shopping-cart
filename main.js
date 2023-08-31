@@ -124,6 +124,17 @@ function handle_removeCartItem() {
     update();
 }
 
+const moonIcon = document.getElementById('moon-icon');
+const body = document.body;
+const darkOverlay = document.getElementById('dark-overlay'); // Get the overlay element
+const navContainer = document.querySelector('.nav'); // Get the nav container element
+
+moonIcon.addEventListener('click', () => {
+    body.classList.toggle('dark-mode'); // Toggle dark mode class on body
+    navContainer.classList.toggle('dark-mode'); // Toggle dark mode class on nav container
+    darkOverlay.style.backgroundColor = body.classList.contains('dark-mode') ? 'rgba(0, 0, 0, 0.5)' : 'rgba(0, 0, 0, 0)'; // Toggle overlay color
+});
+
 function handle_changeItemQuantity() {
     if (isNaN(this.value) || this.value < 1) {
         this.value = 1;

@@ -54,6 +54,34 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 20px 0;
+    background-color: var(--bg-color);
+}
+
+body.dark-mode header {
+    background-color: #000; /* Set a dark background color for the header */
+    color: #fff; /* Set text color to white for the header */
+}
+
+body.dark-mode .product-box {
+    background-color: #333333; /* Dark background color */
+    color: #ffffff; /* Light text color */
+}
+body.dark-mode .nav {
+    background-color: #000; 
+    color: #fff; /
+}
+
+body.dark-mode .logo {
+    color: var(--sec-color); /* Keep logo text color unchanged */
+}
+
+body.dark-mode .cart-product-title {
+    color: #ffffff; 
+}
+
+body.dark-mode .cart {
+    background-color: #333333; /* Set dark background color for cart in dark mode */
+    color: #ffffff; /* Set text color to white for cart in dark mode */
 }
 .logo{
     font-size: 1.1rem;
@@ -69,6 +97,25 @@ header{
     font-size: 1.8rem;
     cursor: pointer;
 }
+
+#moon-icon{
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); 
+    z-index: 99; 
+    pointer-events: none; 
+    transition: background-color 0.5s;
+}
+
 
 /* CART  */
 .cart{
@@ -109,6 +156,12 @@ header{
     object-fit: contain;
     padding: 10px;
 }
+
+.dark-mode {
+    background-color: #000; 
+    color: #fff; 
+}
+
 .detail-box{
     display: grid;
     row-gap: .5rem;
@@ -183,8 +236,15 @@ header{
     grid-template-columns: repeat(auto-fit, minmax(220px, auto));
     gap: 1.5rem;
 }
-.product-box{
+
+.product-box {
     position: relative;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 .product-box:hover{
     padding: 10px;
@@ -202,6 +262,7 @@ header{
   padding: 5px; 
   font-size: 1.2rem; 
   transition: color 0.3s; 
+  border: none;
 }
 
 .like-button.liked i {
