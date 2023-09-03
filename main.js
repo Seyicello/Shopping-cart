@@ -104,6 +104,19 @@ function handle_addCartItem() {
     update();
 }
 
+const menuIcon = document.getElementById('menu-icon');
+const menu = document.querySelector('.menu');
+const menuClose = document.getElementById('menu-close'); // This line is sufficient
+
+menuIcon.addEventListener('click', () => {
+    // Toggle the 'active' class to open/close the menu
+    menu.classList.toggle('active');
+});
+
+menuClose.addEventListener("click", () => {
+    menu.classList.remove("active");
+});
+
 function handle_openCart() {
     cart.classList.add("active");
 }
@@ -130,10 +143,11 @@ const darkOverlay = document.getElementById('dark-overlay'); // Get the overlay 
 const navContainer = document.querySelector('.nav'); // Get the nav container element
 
 moonIcon.addEventListener('click', () => {
-    body.classList.toggle('dark-mode'); // Toggle dark mode class on body
-    navContainer.classList.toggle('dark-mode'); // Toggle dark mode class on nav container
-    darkOverlay.style.backgroundColor = body.classList.contains('dark-mode') ? 'rgba(0, 0, 0, 0.5)' : 'rgba(0, 0, 0, 0)'; // Toggle overlay color
+    body.classList.toggle('dark-mode'); 
+    navContainer.classList.toggle('dark-mode'); 
+    darkOverlay.style.backgroundColor = body.classList.contains('dark-mode') ? 'rgba(0, 0, 0, 0.5)' : 'rgba(0, 0, 0, 0)'; 
 });
+
 
 function handle_changeItemQuantity() {
     if (isNaN(this.value) || this.value < 1) {

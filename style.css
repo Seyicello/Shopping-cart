@@ -104,6 +104,12 @@ body.dark-mode .cart {
     margin-left: 10px;
 }
 
+#menu-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
 .overlay {
     position: fixed;
     top: 0;
@@ -134,6 +140,46 @@ body.dark-mode .cart {
     border-radius: 8px;
     transition: 1.5s;
 }
+
+/* Style for the menu */
+.menu {
+    position: fixed;
+    top: 0;
+    left: -360px; 
+    width: 360px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--main-color);
+    border-radius: 8px;
+    transition: left 0.5s; 
+    z-index: 101; 
+    box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+}
+
+#menu-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s; 
+}
+
+.menu.active {
+    left: 0;
+    transition: left 0.5s ease; 
+}
+
+.menu.active #menu-close {
+    color: red; 
+}
+
+
+
 .cart.active{
     right: 0;
     transition: .5s;
@@ -335,5 +381,45 @@ body.dark-mode .cart {
     }
     .cart{
         width: 280px;
+    }
+}
+
+/* Add this CSS to hide the menu icon in desktop view */
+@media (min-width: 768px) {
+    #menu-icon {
+        display: none;
+    }
+}
+
+/* Add this CSS to style the menu icon in mobile view */
+@media (max-width: 767px) {
+    .logo-menu {
+        display: flex;
+        align-items: center;
+    }
+
+    #menu-icon {
+        font-size: 1.8rem;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--sec-color);
+        text-transform: uppercase;
+    }
+
+    .logo span {
+        color: var(--main-color);
+        font-weight: 700;
+    }
+}
+
+/* CSS to hide the moon icon in mobile view */
+@media (max-width: 767px) {
+    #moon-icon {
+        display: none; /* Hide the moon icon in mobile view */
     }
 }
