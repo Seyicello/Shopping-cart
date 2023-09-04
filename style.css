@@ -178,7 +178,36 @@ body.dark-mode .cart {
     color: red; 
 }
 
+.menu ul {
+        list-style-type: none;
+        padding: 0;
+    }
 
+     .menu ul li {
+        margin-bottom: 20px; 
+    }
+
+     .menu ul li i {
+        margin-right: 10px; 
+     }
+
+     .menu h3{
+        margin-top: 10px;
+        margin-bottom: 10px;
+     }
+
+     .settings{
+        margin-top: 10px;
+    
+     }
+     .settings ul li{
+        margin-top: 15px;
+        margin-bottom: 45px;
+     }
+
+     .settings ul li i{
+        margin-right: 10px;
+     }
 
 .cart.active{
     right: 0;
