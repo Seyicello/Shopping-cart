@@ -241,6 +241,8 @@ function handle_removeCartItem() {
 // Get references to the login button and the login popup
 const loginButton = document.getElementById("login-button");
 const loginPopup = document.getElementById("login-popup");
+const loginClose = document.querySelector(".login-close");
+const darkOverlay = document.getElementById("dark-overlay"); // Declare darkOverlay here
 
 // Function to show the login popup
 function showLoginPopup() {
@@ -256,10 +258,14 @@ function hideLoginPopup() {
 loginButton.addEventListener("click", showLoginPopup);
 
 // Event listener to hide the login popup when the close button is clicked
-const loginClose = document.querySelector(".login-close");
 loginClose.addEventListener("click", hideLoginPopup);
 
 // Event listener to hide the login popup when the overlay is clicked
 darkOverlay.addEventListener("click", hideLoginPopup);
+
+const loginLink = document.getElementById("login-link");
+
+// Event listener to show the login popup when the link is clicked
+loginLink.addEventListener("click", showLoginPopup);
 
 // ... (remaining code)
