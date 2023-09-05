@@ -14,9 +14,57 @@
     <header>
         <div class="nav container">
             <a href="#" class="logo"><span>SEYI </span>Cello</a>
+    <div class="search-box-desktop"> 
+        <input type="text" placeholder="Search...">
+        <i class="bx bx-search"></i>
+    </div>
+    <!-- Add the English dropdown here -->
+    <div class="language-dropdown">
+    <button class="dropdown-toggle">
+        <i class='bx bx-chevron-down-circle' id="dropdown-icon"></i>
+        <p>Language</p>
+    </button>
+    <div class="dropdown-content">
+        <a href="#">ENG</a>
+        <a href="#">FRE</a>
+        <a href="#">ESP</a>
+    </div>
+</div>
+
+          <!--Help dropdown-->
+          <div class="help-dropdown">
+            <button class="help-toggle">
+                <i class='bx bx-chevron-down-circle' id="dropdown-icon"></i>
+                <p>Help</p>
+            </button>
+            <div class="help-content">
+                <a href="#">Contact Us</a>
+                <a href="#">FaQs</a>
+                <a href="#">Track My Order</a>
+            </div>
+          </div>
+
+          <!--Account dropdown-->
+          <div class="account-dropdown">
+            <button class="account-toggle">
+                <i class='bx bx-chevron-down-circle' id="dropdown-icon"></i>
+                <p>Account</p>
+            </button>
+            <div class="account-content">
+                <a href="#"><button class="login" id="login-button">Log in</button></a>
+                <a href="#"><button class="signup">Sign up</button></a> 
+               <li><a href="#">Wishlist</a></li>
+               <li><a href="#">Profile</a></li>
+               <li><a href="#">About Us</a></li>
+                
+            </div>
+          </div>
+
+
+          
             <i class='bx bx-shopping-bag' id="cart-icon"></i>
             <i class="bx bx-menu" id="menu-icon"></i> 
-            <i class='bx bx-moon' id="moon-icon"></i>
+           
             <div class="cart">
                 <h2 class="cart-title">Your Cart</h2>
                 <div class="cart-content"></div>
@@ -29,9 +77,13 @@
             </div>
 
             <div class="menu">
-                <h1>Welcome</h1> 
-                <p>Do you have an account yet?</p> <hr>
+                <div class="menu-header">
                 <i class='bx bx-x menu-close' id="menu-close"></i>
+                <i class='bx bx-moon' id="moon-icon"></i>
+                 <h1>Welcome</h1> 
+                 <p>Do you have an account yet?</p>
+                 <hr>
+           </div>
     <ul>
         <h3>Shop by Department</h3>
         <li><i class='bx bx-chevron-right'></i>Phones</li>
@@ -50,7 +102,7 @@
         <li><i class="fas fa-language"></i>Language</li>
         <li><i class="fas fa-headset"></i> Customer Care</li> 
     </ul>
-    <h4>Sign Up/Sign In</h4>
+    <h4>Sign Up/Log In</h4>
     </div>
             </div>
         </div>
@@ -126,6 +178,29 @@
             </div>
         </div>
     </section>
+
+
+    <!-- Login popup -->
+    <div class="login-popup" id="login-popup">
+    <div class="login-form">
+        <span class="login-close" id="login-close">&times;</span>
+        <div class="center-login">
+            <h2 class="login-title">Log in</h2>
+            <div class="login-input-container">
+                <label for="email-phone">Email/Phone Number</label>
+                <input type="text" class="login-input" id="email-phone" placeholder="Enter your email or phone number">
+            </div>
+            <div class="login-input-container">
+                <label for="password">Password</label>
+                <div class="password-input">
+                    <input type="password" class="login-input" id="password" placeholder="Enter your password">
+                    <i class="bx bx-show password-toggle" id="password-toggle"></i>
+                </div>
+            </div>
+            <button class="login-button">Log in</button>
+        </div>
+    </div>
+</div>
 
     <script src="./main.js"></script>
 </body>

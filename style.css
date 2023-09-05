@@ -93,6 +93,213 @@ body.dark-mode .cart {
     color: var(--main-color);
     font-weight: 700;
 }
+
+/* Style for the search box in desktop view */
+.search-box-desktop {
+    display: flex;
+    align-items: center;
+    background-color: transparent; 
+    border: 1px solid var(--text-color); 
+    border-radius: 5px; 
+    padding: 2px;
+    width: 300px;
+    justify-content: space-between;
+}
+
+/* Style for the search input */
+.search-box-desktop input[type="text"] {
+    border: none;
+    padding: 5px;
+    font-size: 1rem;
+    background-color: transparent; 
+    color: var(--text-color); 
+    outline: none;
+    width: 100%; 
+    transition: border-color 0.3s;
+}
+
+/* Style for the search input placeholder */
+.search-box-desktop input[type="text"]::placeholder {
+    color: var(--text-color); 
+}
+
+/* Style for the search icon */
+.search-box-desktop i.bx-search {
+    background-color: #322E2ED6; 
+    padding: 8px; 
+    border-radius: 50%; 
+    color: var(--bg-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for the search icon background */
+.search-box-desktop i.bx-search:hover {
+    background-color: #322E2E; 
+}
+
+/* Style for the language dropdown */
+.language-dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-toggle i {
+    font-size: 1.5rem; /* Adjust the icon size as needed */
+    margin-right: 5px; /* Add some space between the icon and text */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--bg-color);
+    min-width: 60px;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    right: 0;
+    top: 40px;
+    z-index: 1;
+    transition: display 0.3s; /* Add smooth transition for the dropdown */
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+}
+
+.dropdown-content.active {
+    display: block;
+}
+
+/* Help dropdown */
+.help-dropdown {
+    position: relative;
+}
+
+.help-toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.help-toggle p {
+    margin-left: 5px; 
+}
+
+#dropdown-icon {
+    font-size: 1.5rem; 
+}
+
+.help-content {
+    display: none;
+    position: absolute;
+    background-color: var(--bg-color);
+    border: 1px solid var(--main-color); 
+    border-radius: 8px;
+    padding: 30px; 
+}
+
+.help-content a {
+    color: var(--text-color);
+    padding: 7px 0; 
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.help-content a:hover {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+}
+
+
+.help-content.active {
+    display: flex;
+    flex-direction: column; /* Display content links in a column */
+}
+
+.login{
+   background-color: var(--sec-color);
+   border-radius: 10px;
+    padding: 0 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.signup{
+    background-color: var(--main-color);
+    border-radius: 10px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+.account-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style for the dropdown toggle button */
+.account-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex; 
+  align-items: center;
+}
+
+
+#dropdown-icon {
+  font-size: 24px;
+}
+
+
+.account-content {
+  position: absolute;
+  background-color: #fff; 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+  display: none;
+  min-width: 200px; 
+  justify-content: center;
+  text-align: center;
+}
+
+
+.account-content li a {
+  margin-top: 10px;
+  display: block; 
+  padding: 5px 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Show the account content when the dropdown is active */
+.account-dropdown:hover .account-content {
+  display: block; /* Display the content as block elements (one below the other) */
+}
+
 #cart-icon{
     font-size: 1.8rem;
     cursor: pointer;
@@ -167,6 +374,29 @@ body.dark-mode .cart {
     color: var(--text-color);
     cursor: pointer;
     transition: color 0.3s; 
+}
+
+ #moon-icon {
+    font-size: 1.2rem;
+    cursor: pointer;
+    
+}
+
+/* Define styles for dark mode */
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Style for moon icon in dark mode */
+.dark-mode #moon-icon {
+    color: #f1c40f; /* Change moon icon color in dark mode */
+}
+
+/* Style for menu in dark mode */
+.dark-mode .menu {
+    background-color: #444; /* Change menu background color in dark mode */
+    color: #fff; /* Change menu text color in dark mode */
 }
 
 .menu.active {
@@ -372,6 +602,155 @@ body.dark-mode .cart {
     background-color: hsl(249, 32%, 17%);
 }
 
+/* Style for the login popup */
+.login-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    background-color: #fff;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.login-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the close button (X) */
+.login-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+}
+
+/* Center the login form */
+.center-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* CSS for moving the icon to the right end of the password input
+.password-input-container {
+    position: relative;
+}
+
+.login-input[type="password"] {
+    padding-right: 30px; /* Adjust as needed to create space for the icon */
+/* }
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Adjust the right position as needed */
+    /* transform: translateY(-50%);
+    cursor: pointer; */
+/* }  */
+
+/* Style the login popup and its content */
+.login-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.login-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.center-login {
+    text-align: center;
+}
+
+.login-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Style the input containers */
+.login-input-container {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Style the input fields */
+.login-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style the password input and toggle icon */
+.password-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-toggle {
+    cursor: pointer;
+    margin-left: -30px;
+}
+
+
+
 
 /* ================ RESPONSIVE & BREAKPOINTS ============= */
 @media (max-width: 1080px){
@@ -420,6 +799,13 @@ body.dark-mode .cart {
     }
 }
 
+/* Add this CSS to style the menu icon in desktop view */
+@media (min-width: 768px) {
+    #menu-icon {
+        display: block; /* Show the menu icon in desktop view */
+    }
+}
+
 /* Add this CSS to style the menu icon in mobile view */
 @media (max-width: 767px) {
     .logo-menu {
@@ -446,9 +832,72 @@ body.dark-mode .cart {
     }
 }
 
-/* CSS to hide the moon icon in mobile view */
+
+/* Add this CSS to style the menu icon in mobile view */
 @media (max-width: 767px) {
-    #moon-icon {
-        display: none; /* Hide the moon icon in mobile view */
+    .logo-menu {
+        display: flex;
+        align-items: center;
+    }
+
+    #menu-icon {
+        font-size: 1.8rem;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--sec-color);
+        text-transform: uppercase;
+    }
+
+    .logo span {
+        color: var(--main-color);
+        font-weight: 700;
     }
 }
+
+/* CSS to hide the moon icon in desktop view */
+@media (min-width: 768px) {
+    #moon-icon {
+        display: none; /* Hide the moon icon in desktop view */
+    }
+}
+
+/* CSS to show the moon icon in mobile view */
+@media (max-width: 767px) {
+    #moon-icon {
+        display: inline-block; /* Show the moon icon in mobile view */
+    }
+}
+
+
+/* CSS to hide the search box and icon on mobile view */
+@media (max-width: 767px) {
+    .search-box-desktop {
+        display: none;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .language-dropdown {
+        display: none; 
+    }
+}
+
+@media (max-width: 767px) {
+    .help-dropdown {
+        display: none; 
+    }
+}
+
+@media (max-width: 767px) {
+    .account-dropdown {
+        display: none;
+    }
+}
+
+

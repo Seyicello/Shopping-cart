@@ -2,6 +2,21 @@ const cartIcon = document.querySelector("#cart-icon");
 const cart = document.querySelector(".cart");
 const closeCart = document.querySelector("#cart-close");
 
+const dropdownIcon = document.getElementById('dropdown-icon');
+const dropdownContent = document.querySelector('.dropdown-content');
+
+dropdownIcon.addEventListener('click', () => {
+    // Toggle the 'active' class to show/hide the dropdown
+    dropdownContent.classList.toggle('active');
+});
+
+const helpToggle = document.querySelector('.help-toggle');
+const helpContent = document.querySelector('.help-content');
+
+helpToggle.addEventListener('click', () => {
+    helpContent.classList.toggle('active');
+});
+
 cartIcon.addEventListener("click", () => {
     cart.classList.add("active");
 });
@@ -48,7 +63,6 @@ function addEvents() {
     });
     // Remove items from cart
     let cartRemove_btns = document.querySelectorAll(".cart-remove");
-    console.log(cartRemove_btns);
     cartRemove_btns.forEach((btn) => {
         btn.addEventListener("click", handle_removeCartItem);
     });
@@ -121,33 +135,30 @@ function handle_openCart() {
     cart.classList.add("active");
 }
 
-function handle_openCart() {
-    cart.classList.add("active");
-}
-
-
-function handle_removeCartItem() {
-    this.parentElement.remove();
-    itemsAdded = itemsAdded.filter(
-        (el) =>
-            el.title !=
-            this.parentElement.querySelector(".cart-product-title").innerHTML
-    );
-
-    update();
-}
-
 const moonIcon = document.getElementById('moon-icon');
 const body = document.body;
-const darkOverlay = document.getElementById('dark-overlay'); // Get the overlay element
 const navContainer = document.querySelector('.nav'); // Get the nav container element
 
 moonIcon.addEventListener('click', () => {
-    body.classList.toggle('dark-mode'); 
-    navContainer.classList.toggle('dark-mode'); 
-    darkOverlay.style.backgroundColor = body.classList.contains('dark-mode') ? 'rgba(0, 0, 0, 0.5)' : 'rgba(0, 0, 0, 0)'; 
+    body.classList.toggle('dark-mode');
+    navContainer.classList.toggle('dark-mode');
+    updateDarkOverlay();
 });
 
+// Add this function to handle the initial state of dark mode
+function handleInitialDarkMode() {
+    if (body.classList.contains('dark-mode')) {
+        updateDarkOverlay();
+    }
+}
+
+// Call the function to handle the initial dark mode state
+handleInitialDarkMode();
+
+function updateDarkOverlay() {
+    const darkOverlay = document.getElementById('dark-overlay');
+    darkOverlay.style.backgroundColor = body.classList.contains('dark-mode') ? 'rgba(0, 0, 0, 0.5)' : 'rgba(0, 0, 0, 0)';
+}
 
 function handle_changeItemQuantity() {
     if (isNaN(this.value) || this.value < 1) {
@@ -187,13 +198,11 @@ function updateTotal() {
 
     // Format and display total price in Nigerian Naira
     totalElement.innerHTML = formatNaira(total);
-
 }
 
 function handle_toggleLike() {
     this.classList.toggle("liked");
 }
-
 
 // Function to format Nigerian Naira
 function formatNaira(amount) {
@@ -214,3 +223,43 @@ function CartBoxComponent(title, price, imgSrc) {
         <i class='bx bxs-trash-alt cart-remove'></i>
     </div>`;
 }
+
+// Function to handle removing items from the cart
+function handle_removeCartItem() {
+    this.parentElement.remove();
+    itemsAdded = itemsAdded.filter(
+        (el) =>
+            el.title !=
+            this.parentElement.querySelector(".cart-product-title").innerHTML
+    );
+
+    updateTotal(); // Update the total after removing an item
+}
+
+// JavaScript for showing and hiding the login popup
+
+// Get references to the login button and the login popup
+const loginButton = document.getElementById("login-button");
+const loginPopup = document.getElementById("login-popup");
+
+// Function to show the login popup
+function showLoginPopup() {
+    loginPopup.style.display = "flex";
+}
+
+// Function to hide the login popup
+function hideLoginPopup() {
+    loginPopup.style.display = "none";
+}
+
+// Event listener to show the login popup when the login button is clicked
+loginButton.addEventListener("click", showLoginPopup);
+
+// Event listener to hide the login popup when the close button is clicked
+const loginClose = document.querySelector(".login-close");
+loginClose.addEventListener("click", hideLoginPopup);
+
+// Event listener to hide the login popup when the overlay is clicked
+darkOverlay.addEventListener("click", hideLoginPopup);
+
+// ... (remaining code)
